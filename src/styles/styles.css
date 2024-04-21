@@ -1,0 +1,25 @@
+.payment-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  background-color: #f7f7f7; 
+}
+
+.payment-form-container,
+.order-details-container {
+  max-width: 400px;
+  width: 100%;
+}
+
+.custom-btn {
+  border: solid 1px #000;
+  padding: 10px 20px;
+  background-color: #052364;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+

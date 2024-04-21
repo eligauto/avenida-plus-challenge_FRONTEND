@@ -1,0 +1,72 @@
+.credit-card{
+  display: contents;
+  margin: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.card-container{
+  background: #052364;
+  width: 550px;
+  border-radius: 8px;
+}
+
+.chipcvv-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px 20px 20px ;
+}
+
+.chip img{
+  height: 70px;
+}
+
+.cvv{
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.chip #icon{
+  position: relative;
+  height: 30px;
+  left: -5px;
+}
+
+.card-number{
+  font-size: 1.85rem;
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+.date-container{
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin-left: 5.4%;
+}
+
+.date-since, .date-until{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
+
+.date-until p, .date-since p{
+  font-size: 0.5rem;
+  margin-right: 10px;
+}
+
+.date-until div, .date-since div{
+  font-size: 1.3rem;
+}
+
+.card-name{
+  font-size: 1.7rem;
+  margin: 4% 0 0 5.4%;
+  padding-bottom: 10px;
+}

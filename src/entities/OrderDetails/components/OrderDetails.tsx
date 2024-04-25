@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalAlert from "../../ui/components/ModalAlert";
+
 import { IOrderDetailsProps } from "../types";
 
 export const OrderDetails: React.FC<IOrderDetailsProps> = ({
@@ -12,13 +12,16 @@ export const OrderDetails: React.FC<IOrderDetailsProps> = ({
     total,
     onConfirm,
 }) => {
-    /* const [isModalOpen, setModalOpen] = useState(false);
 
-    const handleClose = () => {
-        setModalOpen(false);
-    }; */
+    const [isTermsChecked, setTermsChecked] = useState(false);
 
-    //const handleOpen = () => setModalOpen(true); //Aca estaba el uso del ModalAlert
+    const handleConfirm = () => {
+        if (!isTermsChecked) {
+            alert("Por favor acepta los términos y condiciones para continuar.");
+            return;
+        }
+        onConfirm();
+    };
 
     return (
         <div className="card">
@@ -53,7 +56,13 @@ export const OrderDetails: React.FC<IOrderDetailsProps> = ({
                     </li>
                 </ul>
                 <div className="form-check my-2">
-                    <input className="form-check-input" type="checkbox" id="termsCheck" />
+                    <input
+                        className="form-check-input"
+                        type="checkbox"
+                        id="termsCheck"
+                        checked={isTermsChecked}
+                        onChange={(e) => setTermsChecked(e.target.checked)}
+                    />
                     <label className="form-check-label" htmlFor="termsCheck">
                         Acepto los términos y condiciones
                     </label>
@@ -61,15 +70,10 @@ export const OrderDetails: React.FC<IOrderDetailsProps> = ({
                 <button
                     type="button"
                     className="custom-btn"
-                    onClick={onConfirm}>
+                    onClick={handleConfirm}>
                     Comprar
                 </button>
             </div>
-            {/* <ModalAlert
-                isOpen={isModalOpen}
-                message="Compra realizada con éxito"
-                onClose={handleClose}
-            /> */}
         </div>
     );
 };

@@ -7,8 +7,6 @@ export interface ICreditCardProps {
   logo?: string;
 }
 
-
-
 //API INTERFACES
 export interface CardHolderIdentification {
   type: string;
@@ -27,6 +25,9 @@ export interface TokenRequest {
 
 //PaymentForm
 
+export interface FormErrors {
+  [key: string]: string;
+}
 export interface FormData {
   cardNumber: string;
   cardHolder: string;

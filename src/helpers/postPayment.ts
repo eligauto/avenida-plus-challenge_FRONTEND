@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Payment } from "../types";
+import { Payment } from "../entities/PaymentForm/types";
 
 export const createPayment = async (paymentData: Payment) => {
   try {
@@ -12,9 +12,10 @@ export const createPayment = async (paymentData: Payment) => {
         },
       }
     );
-    
     return response.data;
   } catch (error: any) {
-    console.error(error);
+    if (error.response.data.statusCode === 400) {
+      throw new Error(error.response.data.message);
+    }
   }
 };

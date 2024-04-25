@@ -37,3 +37,10 @@ Antes de correr el proyecto, es necesario tener la API corriendo en el puerto 30
 - Axios
 - Bootstrap
 
+
+## Deuda técnica
+
+1. No tiene una transición al abrir el modal
+2. El campo de la fecha de nacimiento no tiene un datepicker
+3. La fecha "Desde" esta hardcodeada
+4. La no utilizacion de PropTypes

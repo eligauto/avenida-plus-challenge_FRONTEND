@@ -76,6 +76,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ formData, handleChange
                                 />
                             </div>
                             <div className="mb-3">
+                                <label htmlFor="cardHolderBirthdate" className="form-label">Fecha de nacimiento del titular de la tarjeta</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -83,7 +84,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ formData, handleChange
                                     name="cardHolderBirthdate"
                                     value={formData.cardHolderBirthdate}
                                     onChange={handleChange}
-                                    placeholder='Fecha de nacimiento del titular de la tarjeta'
+                                    placeholder='DD-MM-AAAA'
                                 />
                             </div>
                             <div className="mb-3">

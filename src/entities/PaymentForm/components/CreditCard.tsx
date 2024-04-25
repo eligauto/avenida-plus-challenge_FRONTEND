@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ICreditCardProps } from "../types";
-import chip from "../../../assets/cardchip.png";
+import chip from "../../../../assets/cardchip.png";
 import "../styles/CreditCard.css";
 //Componente para diseñar la sección de la tarjeta de crédito
 export const CreditCard: React.FC<ICreditCardProps> = ({
@@ -10,6 +10,8 @@ export const CreditCard: React.FC<ICreditCardProps> = ({
     expirationYear,
     cvv,
 }) => {
+
+    //const chip = `../../../assets/cardchip.png`;
 
     const cardNumberFormated = cardNumber
         .replace(/\s/g, "")

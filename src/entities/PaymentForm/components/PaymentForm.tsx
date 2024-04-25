@@ -1,29 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { CreditCard } from './CreditCard';
+import { PaymentFormProps } from '../types';
 
-export const PaymentForm = () => {
-    const [formData, setFormData] = useState({
-        cardNumber: "",
-        cardHolder: "",
-        expirationDate: "",
-        securityCode: "",
-        dni: "",
-        duesQuantity: '1'
-    });
+export const PaymentForm: React.FC<PaymentFormProps> = ({ formData, handleChange }) => {
 
-    const handleChange = (e: { target: { name: any; value: any; }; }) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-        // Lógica para manejar el envío de los datos
-        console.log(formData);
-    };
 
     const expirationMonth = formData.expirationDate.slice(0, 2);
     const expirationYear = formData.expirationDate.slice(3);
@@ -31,7 +11,7 @@ export const PaymentForm = () => {
     return (
         <div className="card">
             <div className="card-body">
-                <form onSubmit={handleSubmit} className="row">
+                <form className="row">
                     <div className="col-md-6">
                         <div className="card-body">
                             <h5 className="card-title my-4">¿Cómo querés pagar?</h5>
@@ -96,6 +76,17 @@ export const PaymentForm = () => {
                                 />
                             </div>
                             <div className="mb-3">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="cardHolderBirthdate"
+                                    name="cardHolderBirthdate"
+                                    value={formData.cardHolderBirthdate}
+                                    onChange={handleChange}
+                                    placeholder='Fecha de nacimiento del titular de la tarjeta'
+                                />
+                            </div>
+                            <div className="mb-3">
                                 <select
                                     className="form-select"
                                     id="duesQuantity"
@@ -106,7 +97,7 @@ export const PaymentForm = () => {
                                     <option value="1">1 cuota sin interés</option>
                                     <option value="3">3 cuotas sin interés</option>
                                     <option value="6">6 cuotas sin interés</option>
-                                    <option value="12">12 cuotas sin interés</option>   
+                                    <option value="12">12 cuotas sin interés</option>
                                 </select>
                             </div>
                         </div>

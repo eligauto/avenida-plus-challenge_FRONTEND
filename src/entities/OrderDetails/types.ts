@@ -6,4 +6,5 @@ export interface IOrderDetailsProps {
     interest?: number;
     CFT: string;
     total: number;
+    onConfirm: () => void;
   }

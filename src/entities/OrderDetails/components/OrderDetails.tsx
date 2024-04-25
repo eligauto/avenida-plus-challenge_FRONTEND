@@ -1,3 +1,5 @@
+import { useState } from "react";
+import ModalAlert from "../../ui/components/ModalAlert";
 import { IOrderDetailsProps } from "../types";
 
 export const OrderDetails: React.FC<IOrderDetailsProps> = ({
@@ -8,7 +10,16 @@ export const OrderDetails: React.FC<IOrderDetailsProps> = ({
     interest = 0,
     CFT,
     total,
+    onConfirm,
 }) => {
+    /* const [isModalOpen, setModalOpen] = useState(false);
+
+    const handleClose = () => {
+        setModalOpen(false);
+    }; */
+
+    //const handleOpen = () => setModalOpen(true); //Aca estaba el uso del ModalAlert
+
     return (
         <div className="card">
             <div className="card-body">
@@ -47,8 +58,18 @@ export const OrderDetails: React.FC<IOrderDetailsProps> = ({
                         Acepto los términos y condiciones
                     </label>
                 </div>
-                <button type="button" className="custom-btn">Comprar</button>
+                <button
+                    type="button"
+                    className="custom-btn"
+                    onClick={onConfirm}>
+                    Comprar
+                </button>
             </div>
+            {/* <ModalAlert
+                isOpen={isModalOpen}
+                message="Compra realizada con éxito"
+                onClose={handleClose}
+            /> */}
         </div>
     );
 };

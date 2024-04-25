@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CreditCard } from './CreditCard';
 import { PaymentFormProps } from '../types';
 
+// Componente Hijo:
+// Este componente va a mostrar el formulario de pago
 export const PaymentForm: React.FC<PaymentFormProps> = ({ formData, handleChange }) => {
 
 

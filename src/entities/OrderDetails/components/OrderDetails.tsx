@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { IOrderDetailsProps } from "../types";
 
+// Componente Hijo:
+// Este componente va a mostrar el detalle de la orden y permitir al usuario confirmar la compra.
 export const OrderDetails: React.FC<IOrderDetailsProps> = ({
     itemsCost,
     itemsCount,

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FormData, Payment, FormErrors } from "../entities/PaymentForm/types";
 import { createPayment } from "../helpers";
 
+// Este hook va a manejar el procesamiento del pago.
 export const usePaymentProcessor = (
   formData: FormData,
   errors: FormErrors,

@@ -5,6 +5,7 @@ import { useFormData, usePaymentProcessor, useProductCalculations } from "./hook
 // Componente Padre:
 export const PaymentPage = () => {
 
+    //hooks para calcular los productos, manejar el formulario y procesar el pago
     const { products, total, CFT, interest, shippingCost, subtotal } = useProductCalculations();
     const { formData, handleChange, errors } = useFormData();
     const { isModalOpen, handleSubmit, handleCloseModal, modalMessage } = usePaymentProcessor(formData, errors, total);

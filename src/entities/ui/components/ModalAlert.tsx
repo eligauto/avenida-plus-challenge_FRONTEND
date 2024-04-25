@@ -1,6 +1,7 @@
 import { ModalAlertProps } from "../types";
 
-
+// Componente Hijo:
+// Este componente va a mostrar un mensaje de alerta en un modal
 const ModalAlert: React.FC<ModalAlertProps> = ({ isOpen, message, onClose }) => {
     return (
         <div className={`modal fade ${isOpen ? "show d-block" : "d-none"}`} tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden={!isOpen}>

@@ -2,6 +2,7 @@ import { useState, ChangeEvent } from 'react';
 import { FormData, FormErrors } from '../entities/PaymentForm/types';
 import { formatInput, validateInput } from '../helpers';
 
+// Este hook va a manejar el estado del formulario y los errores de validación.
 export const useFormData = () => {
     const [formData, setFormData] = useState<FormData>({
         cardNumber: "",

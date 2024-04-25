@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { ICreditCardProps } from "../types";
 import chip from "../../../../assets/cardchip.png";
 import "../styles/CreditCard.css";
-//Componente para diseñar la sección de la tarjeta de crédito
+
+// Componente Hijo:
+// Este componente va a mostrar la tarjeta de crédito con los datos ingresados por el usuario
 export const CreditCard: React.FC<ICreditCardProps> = ({
     cardNumber,
     cardHolder,
